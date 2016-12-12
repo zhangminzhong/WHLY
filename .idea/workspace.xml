@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="65bd0ba1-e328-4156-969c-be478ad8f099" name="Default" comment="">
       <change type="DELETED" beforePath="D:\IdeaProjects\WHLY\meterManagement\meterManagement-SmsMeterLib\src\main\java\org\whut\meterManagement\smsmeterlib\smsprocess\Test - 副本.java" afterPath="" />
       <change type="DELETED" beforePath="D:\IdeaProjects\WHLY\meterManagement\meterManagement-SmsMeterLib\src\main\java\org\whut\meterManagement\smsmeterlib\smsprocess\Test.java" afterPath="" />
@@ -8,6 +9,9 @@
       <change type="DELETED" beforePath="D:\IdeaProjects\WHLY\新建文本文档.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+=======
+    <list default="true" id="65bd0ba1-e328-4156-969c-be478ad8f099" name="Default" comment="" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
     <ignored path="WHLY.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -124,6 +128,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file leaf-file-name="PDAInfo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/PDAInfo.java">
@@ -208,6 +213,9 @@
         </entry>
       </file>
     </leaf>
+=======
+    <leaf />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -285,6 +293,11 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,6 +316,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WHLY" />
@@ -395,6 +409,10 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+        </subPane>
+      </pane>
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -778,15 +796,25 @@
       <workItem from="1481526978332" duration="4356000" />
       <workItem from="1481532022166" duration="36000" />
       <workItem from="1481533322687" duration="2725000" />
+<<<<<<< HEAD
       <workItem from="1481542227639" duration="647000" />
+=======
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="8807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+=======
+    <option name="totallyTimeSpent" value="8160000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959327" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -797,11 +825,19 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13447171" sideWeight="0.7282282" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15208112" sideWeight="0.71511626" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13287087" sideWeight="0.7282282" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23479189" sideWeight="0.71511626" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -851,6 +887,15 @@
           <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+=======
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2045#2046#0" expanded="true" />
+            <element signature="e#2075#2076#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           </folding>
         </state>
       </provider>
@@ -893,6 +938,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+=======
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2045#2046#0" expanded="true" />
+            <element signature="e#2075#2076#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           </folding>
         </state>
       </provider>
@@ -962,15 +1016,23 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/test/java/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5146067" vertical-offset="68" max-vertical-offset="513">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/ParamType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51184833" vertical-offset="0" max-vertical-offset="633">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/CFunction.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="369" max-vertical-offset="1215">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
@@ -989,48 +1051,121 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6012" max-vertical-offset="6858">
           <caret line="266" column="31" selection-start-line="266" selection-start-column="31" selection-end-line="266" selection-end-column="31" />
-          <folding />
+=======
+        <state vertical-scroll-proportion="-0.40758294" vertical-offset="582" max-vertical-offset="1215">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/FrameResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+        <state vertical-scroll-proportion="0.51184833" vertical-offset="0" max-vertical-offset="633">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/test/java/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5146067" vertical-offset="68" max-vertical-offset="513">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/FrameResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+=======
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/FrameParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1996806" vertical-offset="2997" max-vertical-offset="3645">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/FrameParam.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2799" max-vertical-offset="3645">
           <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/FrameDirection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51757187" vertical-offset="0" max-vertical-offset="626">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/MeterStatus.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="3258" max-vertical-offset="4104">
           <caret line="171" column="1" selection-start-line="171" selection-start-column="1" selection-end-line="171" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="3511" max-vertical-offset="4266">
+          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2045#2046#0" expanded="true" />
+            <element signature="e#2075#2076#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/ParamType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+=======
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/CommandFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53996736" vertical-offset="6203" max-vertical-offset="6858">
+          <caret line="266" column="31" selection-start-line="266" selection-start-column="31" selection-end-line="266" selection-end-column="31" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/PDAInfo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.23404256" vertical-offset="180" max-vertical-offset="2322">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+=======
+        <state vertical-scroll-proportion="0.75239617" vertical-offset="1635" max-vertical-offset="2322">
+          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/src/main/java/org/whut/meterManagement/smsmeterlib/smsprocess/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15957446" vertical-offset="0" max-vertical-offset="846">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> e6b56b91a244ff8edc1da705f77e2df2d9c9ed67
           <folding />
         </state>
       </provider>
