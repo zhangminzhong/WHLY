@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WHLY.iml" filepath="$PROJECT_DIR$/WHLY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/meterManagement-SmsMeterLib.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/meterManagement-SmsMeterLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-aes/meterManagement-aes.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-aes/meterManagement-aes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-business/meterManagement-business.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-business/meterManagement-business.iml" />
+    </modules>
+  </component>
+</project>
