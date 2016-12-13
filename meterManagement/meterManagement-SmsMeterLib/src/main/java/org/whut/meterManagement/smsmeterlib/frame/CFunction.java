@@ -1,4 +1,4 @@
-package org.whut.meterManagement.smsmeterlib.smsprocess;
+package org.whut.meterManagement.smsmeterlib.frame;
 
 /**
  * Created with IntelliJ IDEA.

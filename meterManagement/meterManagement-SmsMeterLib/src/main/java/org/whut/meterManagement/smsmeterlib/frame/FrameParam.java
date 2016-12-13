@@ -1,4 +1,4 @@
-package org.whut.meterManagement.smsmeterlib.smsprocess;
+package org.whut.meterManagement.smsmeterlib.frame;
 
 /**
  * Created by chenfu on 2016/12/9.

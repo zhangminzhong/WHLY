@@ -1,4 +1,4 @@
-package org.whut.meterManagement.smsmeterlib.smsprocess;
+package org.whut.meterManagement.smsmeterlib.frame;
 
 import java.util.ArrayList;
 
