@@ -3,20 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>WHLY</artifactId>
+        <artifactId>meterManagement</artifactId>
         <groupId>WHLY</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>meterManagement</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>meterManagement-business</module>
-        <module>meterManagement-aes</module>
-        <module>meterManagement-SmsMeterLib</module>
-        <module>meterManagement-util</module>
-    </modules>
+    <artifactId>meterManagement-util</artifactId>
 
 
 </project>

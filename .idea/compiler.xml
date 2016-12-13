@@ -25,6 +25,7 @@
         <processorPath useClasspath="true" />
         <module name="meterManagement-aes" />
         <module name="meterManagement-SmsMeterLib" />
+        <module name="meterManagement-util" />
       </profile>
     </annotationProcessing>
   </component>

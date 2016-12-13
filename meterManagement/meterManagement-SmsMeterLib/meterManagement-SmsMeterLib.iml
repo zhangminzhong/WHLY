@@ -10,5 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="meterManagement-aes" />
+    <orderEntry type="module" module-name="meterManagement-util" />
   </component>
 </module>

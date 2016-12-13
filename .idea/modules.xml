@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/meterManagement-SmsMeterLib.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-SmsMeterLib/meterManagement-SmsMeterLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-aes/meterManagement-aes.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-aes/meterManagement-aes.iml" />
       <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-business/meterManagement-business.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-business/meterManagement-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meterManagement/meterManagement-util/meterManagement/meterManagement-util.iml" filepath="$PROJECT_DIR$/meterManagement/meterManagement-util/meterManagement/meterManagement-util.iml" />
     </modules>
   </component>
 </project>
