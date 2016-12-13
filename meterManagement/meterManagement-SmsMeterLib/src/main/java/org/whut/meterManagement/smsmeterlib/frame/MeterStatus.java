@@ -24,6 +24,12 @@ public class MeterStatus {
     private double price;
     private byte xtzt;
 
+    private byte XTSJC;
+    private byte FMWZ;
+    private byte TZZT;
+    private byte FMCW;
+    private byte CGGZ;
+
     private Date meterTime;
 
     private int amount1;
@@ -31,6 +37,8 @@ public class MeterStatus {
     private int amount3;
     private int sumamount;
     private int presumamount;
+
+
 
 
     private Date createDate(String s){
@@ -71,6 +79,134 @@ public class MeterStatus {
     public MeterStatus(String meterID,String dataStr){
         this.meterID = meterID;
         getFromStr(dataStr);
+    }
+
+    /// <summary>
+    /// 表具编号.
+    /// </summary>
+    public String getMeterID() {
+        return meterID;
+    }
+
+    public void setMeterID(String meterID) {
+        this.meterID = meterID;
+    }
+
+    /// <summary>
+    /// 表具剩余金额。
+    /// </summary>
+
+
+    public double getRemainMoney() {
+        if ((Byte.toUnsignedInt(xtzt) / 64) % 2 == 1)
+        {
+            return remainMoney * -1;
+        }
+        else
+        {
+            return remainMoney;
+        }
+    }
+
+    /// <summary>
+    /// 表具读数。基表止码
+    /// </summary>
+
+
+    public int getMeterRead() {
+        return meterRead;
+    }
+
+    public void setMeterRead(int meterRead) {
+        this.meterRead = meterRead;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    /// <summary>
+    /// 系统状态字节
+    /// </summary>
+    public byte getXtzt() {
+        return xtzt;
+    }
+
+    public void setXtzt(byte xtzt) {
+        this.xtzt = xtzt;
+    }
+
+    /// <summary>
+    /// 传感故障
+    /// </summary>
+    public byte getCGGZ() {
+        int i = Byte.toUnsignedInt(xtzt) / 4;
+        i = i % 2;
+        return (byte)i;
+    }
+
+    public void setCGGZ(byte CGGZ) {
+        this.CGGZ = CGGZ;
+    }
+
+    /// <summary>
+    /// 阀门位置。  0：正常；    1：错误
+    /// </summary>
+    public byte getFMCW() {
+        int i = Byte.toUnsignedInt(xtzt) / 2;
+        i %= 2;
+        return (byte)i;
+    }
+
+    public void setFMCW(byte FMCW) {
+        this.FMCW = FMCW;
+    }
+
+    /// <summary>
+    /// 阀门位置,0表示阀门开，1表示阀门关
+    /// </summary>
+    public byte getFMWZ() {
+        int i = Byte.toUnsignedInt(xtzt)%2;
+        return (byte) i;
+    }
+
+    public void setFMWZ(byte FMWZ) {
+        this.FMWZ = FMWZ;
+    }
+
+     /// <summary>
+    /// 表具透支状态。0：正常状态；  1：透支状态
+    /// </summary>
+    public byte getTZZT() {
+        int i = Byte.toUnsignedInt(xtzt) / 64;
+        i = i % 2;
+        return (byte)i;
+    }
+
+    public void setTZZT(byte TZZT) {
+        this.TZZT = TZZT;
+    }
+
+    /// <summary>
+    /// 系统数据错 0：正常；  1：错误
+    /// </summary>
+    public byte getXTSJC() {
+        int i = Byte.toUnsignedInt(xtzt)/128;
+        return (byte) i;
+    }
+
+    public void setXTSJC(byte XTSJC) {
+        this.XTSJC = XTSJC;
+    }
+
+
+
+    public void setRemainMoney(double remainMoney) {
+        this.remainMoney = remainMoney;
     }
 
     public Date getMeterTime() {
