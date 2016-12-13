@@ -19,6 +19,7 @@ public class SetPrice extends SendFrame {
         meterID = mId;
         funcCode = 0x08;
         frameID = fId;
+        addParam(price, 2);
 
     }
 }

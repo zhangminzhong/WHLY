@@ -19,6 +19,7 @@ public class ToUserState extends SendFrame {
         meterID = mId;
         funcCode = 0x24;
         frameID = fId;
+        addParam(price, 2);
 
     }
 }
