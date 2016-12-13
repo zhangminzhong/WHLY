@@ -257,7 +257,7 @@ public class MeterStatus {
         this.sumamount = sumamount;
     }
 
-    private void getFromStr(String dataStr) {
+    public void getFromStr(String dataStr) {
         remainMoney = 0.0;
         meterRead = 0;
         price = 0.00;
