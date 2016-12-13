@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Created by chenfu on 2016/12/9.
- * <p/>
+ *
  * 帧解析类，解析收到的字符串帧
  */
 public class ReceiveFrame extends CommandFrame {
