@@ -20,6 +20,8 @@ public class SetServer extends SendFrame {
         meterID = mId;
         funcCode = 0x0D;
         frameID = fId;
+        addParam(serverIndex, 1);
+        addParam(serverNum);
 
     }
 }

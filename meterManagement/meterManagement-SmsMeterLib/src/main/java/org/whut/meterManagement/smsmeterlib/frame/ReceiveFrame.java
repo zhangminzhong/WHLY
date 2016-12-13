@@ -8,9 +8,11 @@ import java.util.List;
 
 /**
  * Created by chenfu on 2016/12/9.
- *
- * 帧解析类，解析收到的字符串帧
  */
+
+/// <summary>
+/// 帧解析类，解析收到的字符串帧
+/// </summary>
 public class ReceiveFrame extends CommandFrame {
 
     protected String dataStr;
@@ -153,8 +155,9 @@ public class ReceiveFrame extends CommandFrame {
 
     /**
      * 对字符串帧进行解析，将解析后数据放到对象字段，同时可判断帧是否合法
+     *
      * @param SMS  短信内容
-     * @param sKey  表具密钥
+     * @param sKey 表具密钥
      * @return
      */
     public boolean ParseFrom(String SMS, String sKey) throws Exception {
@@ -167,13 +170,13 @@ public class ReceiveFrame extends CommandFrame {
         int L = Integer.valueOf(str, 16);
         //判断截止字符串 16
         if (!SMS.substring(L * 2 + 3, L * 2 + 5).equals("16")) {
-              return false;
+            return false;
         }
         //取得加密字符串
         str = SMS.substring(3, 3 + L * 2);
         byte[] frame = new byte[L];
         for (int i = 0; i < L; i++) {
-            frame[i] = (byte) Integer.parseInt(str.substring(i*2, i*2 + 2), 16);
+            frame[i] = (byte) Integer.parseInt(str.substring(i * 2, i * 2 + 2), 16);
         }
         //解密
         byte[] key = getKey(sKey);
@@ -185,7 +188,7 @@ public class ReceiveFrame extends CommandFrame {
             str += (char) buff[i];
         }
         for (int i = 15; i < buff.length; i++) {
-             str += Hex.encode2(buff[i]);
+            str += Hex.encode2(buff[i]);
         }
         str += "16";
 
@@ -204,8 +207,8 @@ public class ReceiveFrame extends CommandFrame {
             }
             for (int i = 0; i < funcCount; i++) {
                 CFunction cf = new CFunction();
-                cf.setCode((byte) Integer.parseInt(dataStr.substring(60 + i * 4, 62 + i * 4),16));
-                cf.setFid((byte) Integer.parseInt(dataStr.substring(62 + i * 4, 64 + i * 4),16));
+                cf.setCode((byte) Integer.parseInt(dataStr.substring(60 + i * 4, 62 + i * 4), 16));
+                cf.setFid((byte) Integer.parseInt(dataStr.substring(62 + i * 4, 64 + i * 4), 16));
                 aryFunc.add(cf);
             }
         }

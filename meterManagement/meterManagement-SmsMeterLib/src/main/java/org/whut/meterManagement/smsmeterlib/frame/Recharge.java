@@ -21,6 +21,9 @@ public class Recharge extends SendFrame {
         meterID = mId;
         frameID = fId;
         funcCode = 0x0A;
+        addParam(mon, 4);
+        addParam(czfs, 1);
+        addParam(cId, 1);
 
     }
 }
