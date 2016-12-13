@@ -264,8 +264,7 @@ public class CommandFrame {
         str = str + str;
         byte[] key = new byte[32];
         for (int i = 0; i < 32; i++) {
-            key[i] = (byte)(int)Integer.valueOf(str.substring(i * 2, i * 2 + 2), 16);
-            //key[i] = byte.Parse(str.SubString(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
+            key[i] = (byte) Integer.parseInt(str.substring(i * 2, i * 2 + 2), 16);
         }
         return key;
     }
