@@ -3,6 +3,8 @@ package org.whut.meterManagement.smsmeterlib.frame;
 import org.whut.meterManagement.aes256.AES;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zhang_minzhong on 2016/12/13.
@@ -116,7 +118,7 @@ public class SendFrame extends CommandFrame {
     /// </summary>
     /// <param name="buff">生产的帧字节数组</param>
     /// <returns>生成结果，等于0表示执行失败，否则返回帧字节数组长度</returns>
-    protected int MakeBuff(byte[] buff)
+    protected int MakeBuff(List<Byte> buff)
     {
         byte[] tmpA = new byte[64];
         tmpA[0] = 0x68;
@@ -141,16 +143,20 @@ public class SendFrame extends CommandFrame {
                 case INT: //整数，将int类型转成16进制字符串（长度是int类型*2），再转成4个字节的对应字节数组
                     int iva=0;
                     iva = fp.GetValue(iva);
+                   // System.out.println(iva);
                     //String stmp = iva.ToString("X" + (fp.getByteLen() * 2).ToString());
                     String stmp = Integer.toHexString(iva);
+
                     while(stmp.length()<fp.getByteLen()*2){
-                        stmp += "0"+stmp;
+                        stmp = "0"+stmp;
                     }
+                    //System.out.println(stmp);
                     for (int j = 0; j < fp.getByteLen(); j++)
                     {
                         String ss = stmp.substring(j * 2, j * 2 + 2);
                         tmpA[pz] = (byte) Integer.parseInt(ss,16);
                         pz++;
+                        //System.out.println(tmpA[pz]);
                     }
                     break;
                 case FLT: //浮点数
@@ -158,10 +164,13 @@ public class SendFrame extends CommandFrame {
                     dva = fp.GetValue(dva);
                     //stmp = string.Format("{0:000000.00}", dva);
                     stmp = new DecimalFormat("000000.00").format(dva);
+                    //System.out.println(stmp);
                     //stmp = stmp.Remove(6, 1);
                     stmp = stmp.substring(0,6)+stmp.substring(7);
+                    //System.out.println(stmp);
                     //stmp = stmp.Remove(0, (4 - fp.ByteLen) * 2);
-                    stmp = stmp.substring(4 - fp.getByteLen() * 2);
+                    stmp = stmp.substring((4 - fp.getByteLen()) * 2);
+                    //System.out.println(stmp);
                     for (int j = 0; j < fp.getByteLen(); j++)
                     {
                         String ss = stmp.substring(j * 2, j * 2 + 2);
@@ -177,15 +186,18 @@ public class SendFrame extends CommandFrame {
                     {
                         //tmpA[pz] = Convert.ToByte(sva[j]);
                         tmpA[pz] = (byte) sva.charAt(i);
+                        //System.out.println(tmpA[pz]);
                         pz++;
                     }
                     break;
                 case BTA:
                     byte[] bva=null;
                     bva = fp.GetValue(bva);
+
                     for (int j = 0; j < fp.getByteLen(); j++)
                     {
                         tmpA[pz] = bva[j];
+                        //System.out.println(tmpA[i]);
                         pz++;
                     }
                     break;
@@ -197,6 +209,7 @@ public class SendFrame extends CommandFrame {
         ///第2~5字节为调整时间值
         if (V2)
         {
+            //System.out.println("V2");
             tmpA[2] += 5;
             if (timeCorrection == 0)
             {
@@ -246,26 +259,31 @@ public class SendFrame extends CommandFrame {
         //帧ID
         tmpA[2] += 1;
         tmpA[pz] = frameID;
+        //System.out.println(frameID);
         //计算校验和
         int cs = 0;
         for (int j = 0; j <= pz; j++)
         {
-
             cs += Byte.toUnsignedInt(tmpA[j]);
         }
         cs = cs % 256;
+        //System.out.println(cs);
         pz++;
         tmpA[pz] = (byte)cs;
         pz++;
         //截至码
         tmpA[pz] = 0x16;
 
-        buff = new byte[pz + 1];
+        //buff = new byte[pz + 1];
         for (int i = 0; i <= pz; i++)
         {
-            buff[i] = tmpA[i];
+            //buff[i] = tmpA[i];
+            buff.add(tmpA[i]);
+            //System.out.print(tmpA[i] + " ");
         }
-        return buff.length;
+        //System.out.println();
+
+        return buff.size();
     }
 
     /// <summary>
@@ -274,16 +292,17 @@ public class SendFrame extends CommandFrame {
     /// <returns></returns>
     public byte[] ByteFrame()
     {
-        byte[] buff=null;
+        //byte[] buff=null;
+        List<Byte> buff = new ArrayList<Byte>();
         if (MakeBuff(buff) == 0)
         {
             byte[] b = new byte[1];
             b[0] = 0;
             return b;
         }
-        byte[] rst = new byte[buff.length - 2];
-        for (int i = 1; i < buff.length - 1; i++)
-            rst[i - 1] = buff[i];
+        byte[] rst = new byte[buff.size() - 2];
+        for (int i = 1; i < buff.size() - 1; i++)
+            rst[i - 1] = buff.get(i);
         return rst;
     }
 
@@ -304,15 +323,17 @@ public class SendFrame extends CommandFrame {
             return false;
         }
 
-        byte[] buff = null;
+        //byte[] buff = null;
+        List<Byte> buff = new ArrayList<Byte>();
         if (MakeBuff(buff) == 0)
         {
             return false;
         }
+
         //开始对帧字节数组进行处理，生成字符串帧
         SMS.append("h");  //帧头
-        String s1 = Integer.toHexString(Byte.toUnsignedInt(buff[1]));
-        String s2 = Integer.toHexString(Byte.toUnsignedInt(buff[2]));
+        String s1 = Integer.toHexString(Byte.toUnsignedInt(buff.get(1)));
+        String s2 = Integer.toHexString(Byte.toUnsignedInt(buff.get(2)));
         if(s1.length()<2)
             s1 = "0"+s1;
         if(s2.length()<2)
@@ -320,14 +341,14 @@ public class SendFrame extends CommandFrame {
         SMS.append(s1+s2); //+= buff[1].ToString("X2") + buff[2].ToString("X2"); //帧命令码F与数据长度L
         for (int i = 3; i < 16; i++)
         {
-            int k = Byte.toUnsignedInt(buff[i]);//SMS += Convert.ToChar(buff[i]);
+            int k = Byte.toUnsignedInt(buff.get(i));//SMS += Convert.ToChar(buff[i]);
             char c = (char)k;
             SMS.append(c);
 
         }
-        for (int i = 16; i < buff.length; i++)
+        for (int i = 16; i < buff.size(); i++)
         {
-            String s = Integer.toHexString(Byte.toUnsignedInt(buff[i]));
+            String s = Integer.toHexString(Byte.toUnsignedInt(buff.get(i)));
             if(s.length()<2){
                 s = "0"+s;
             }
@@ -357,6 +378,17 @@ public class SendFrame extends CommandFrame {
         byte[] frame = ByteFrame();
         byte[] key = getKey(sKey);
 
+        /*System.out.print("帧字节数组：");
+        for(int i=0;i<frame.length;i++){
+            System.out.print(frame[i]+" ");
+        }
+        System.out.println();
+        System.out.print("密钥：");
+        for(int i=0;i<key.length;i++){
+            System.out.print(key[i]+" ");
+        }
+        System.out.println();*/
+
         //加密
         byte[] buff = new byte[0];
         try {
@@ -374,7 +406,7 @@ public class SendFrame extends CommandFrame {
         for (int i = 0; i < buff.length; i++)
         {
             //SMS = SMS + buff[i].ToString("x2").ToUpper();
-            String s = Integer.toHexString(Byte.toUnsignedInt(buff[i]));
+            String s = Integer.toHexString(Byte.toUnsignedInt(buff[i])).toUpperCase();
             if(s.length()<2){
                 s = "0"+s;
             }

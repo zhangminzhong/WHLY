@@ -48,6 +48,7 @@ public class FrameParam {
      */
     public void SetValue(double value, int L)
     {
+        //System.out.println("浮点数："+value+"，在帧中的长度："+L);
         PT = ParamType.FLT;
         byteLen = L;
         fltValue = value;
