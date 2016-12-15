@@ -413,6 +413,7 @@ public class SendFrame extends CommandFrame {
             SMS.append(s);
         }
         SMS.append("16");
+        System.out.println("加密后的字符串: " + SMS.toString());
         return true;
     }
 }
