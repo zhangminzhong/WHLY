@@ -50,7 +50,7 @@ public class Hex {
 			hex = '0' + hex;
 		}
 
-		return hex;
+		return hex.toUpperCase();
 	}
 
 }

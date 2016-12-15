@@ -83,8 +83,14 @@ public class AES {
         //        break;
         //    }
         //}
+<<<<<<< HEAD
         //return allbuff;
         int L = (int)allbuff[1] + 3;
+=======
+
+        //return allbuff;
+        int L = (int) allbuff[1] + 3;
+>>>>>>> 5c74395d7c2a4094834aa8f6f9f9e389a8a466ee
         if (L > allbuff.length)
         {
             L = allbuff.length;
@@ -93,6 +99,10 @@ public class AES {
         for (int i = 0; i < rst.length; i++)
             rst[i] = allbuff[i];
         return rst;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c74395d7c2a4094834aa8f6f9f9e389a8a466ee
     }
     static public byte[] decryptSame(byte[] buff,byte[] key) throws Exception {
         if (key.length != 32)
@@ -137,7 +147,7 @@ public class AES {
         for (int i = 0; i < 32; i++)
         {
            // key[i] = byte.Parse(str.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
-            key[i] = (byte)(int)Integer.valueOf(str.substring(i*2,i*2+2),16);
+            key[i] = (byte) Integer.parseInt(str.substring(i*2,i*2+2),16);
             //System.out.println(key[i]);
         }
         return key;

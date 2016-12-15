@@ -273,7 +273,7 @@ public class SendFrame extends CommandFrame {
         cs = cs % 256;
         //System.out.println(cs);
         pz++;
-        tmpA[pz] = (byte)cs;
+        tmpA[pz] = (byte) cs;
         pz++;
         //截至码
         tmpA[pz] = 0x16;
@@ -382,8 +382,10 @@ public class SendFrame extends CommandFrame {
         }
 
         byte[] frame = ByteFrame();
+        //System.out.println(frame.length);
         byte[] key = getKey(sKey);
 
+<<<<<<< HEAD
        /* System.out.print("加密前帧字节数组：");
         for(int i=0;i<frame.length;i++){
             System.out.print(frame[i]+" ");
@@ -394,6 +396,18 @@ public class SendFrame extends CommandFrame {
             System.out.print(key[i]+" ");
         }
         System.out.println();*/
+=======
+        System.out.print("帧字节数组：");
+        for(int i=0;i<frame.length;i++){
+            System.out.print(frame[i]+" ");
+        }
+        System.out.println();
+//        System.out.print("密钥：");
+//        for(int i=0;i<key.length;i++){
+//            System.out.print(key[i]+" ");
+//        }
+//        System.out.println();
+>>>>>>> 5c74395d7c2a4094834aa8f6f9f9e389a8a466ee
 
         //加密
         byte[] buff = new byte[0];
@@ -408,7 +422,6 @@ public class SendFrame extends CommandFrame {
         String buffLen = Integer.toHexString(buff.length);
         if(buffLen.length()<2)
             buffLen = "0" + buffLen;
-        buffLen.toUpperCase();
         SMS.append(buffLen);
         //System.out.print("加密字符串：");
         for (int i = 0; i < buff.length; i++)
