@@ -126,6 +126,7 @@ public class ReceiveFrame extends CommandFrame {
         try {
             int begin = 20 + getDataStr().length();
             CS = Integer.valueOf(SMS.substring(begin, 2 + begin), 16);
+
         } catch (Exception e) {
             return false;
         }
@@ -135,8 +136,14 @@ public class ReceiveFrame extends CommandFrame {
             return false;
         }
 
-        //对命令码进行分解；命令码说明： D7：传送方向，1表示回传，0表示起始帧；；D6:执行结果，0表示正常；1表示异常; D5-D0:功能码
-        int itmp = funcCode / 0x40;
+        /**
+         * 对命令码进行分解；
+         * 命令码说明：
+         * D7：传送方向，1表示回传，0表示起始帧；
+         * D6:执行结果，0表示正常；1表示异常;
+         * D5-D0:功能码
+         */
+        int itmp = Byte.toUnsignedInt(funcCode) / 0x40;
         if (itmp == 0) {
             frmDirection = FrameDirection.REQUEST;
             frmResult = FrameResult.SUCCESS;
@@ -147,8 +154,8 @@ public class ReceiveFrame extends CommandFrame {
             frmDirection = FrameDirection.REPLY;
             frmResult = FrameResult.FAIL;
         }
-        funcCode = (byte) (funcCode % 64);
 
+        funcCode = (byte) (Byte.toUnsignedInt(funcCode) % 64);
         ParseDataStr(); //对数据域进行解析
         return true;
     }
@@ -158,7 +165,7 @@ public class ReceiveFrame extends CommandFrame {
      *
      * @param SMS  短信内容
      * @param sKey 表具密钥
-     * @return
+     * @return 成功解析帧，返回true，失败返回false
      */
     public boolean ParseFrom(String SMS, String sKey) throws Exception {
         //帧头判断
@@ -181,11 +188,12 @@ public class ReceiveFrame extends CommandFrame {
         //解密
         byte[] key = getKey(sKey);
         byte[] buff = AES.decrypt(frame, key);
-//        System.out.print("帧字节数组：");
-//        for (int i = 0; i < buff.length; i++) {
-//            System.out.print(buff[i] + " ");
-//        }
-//        System.out.println();
+        //System.out.println(buff.length);
+        System.out.print("帧字节数组：");
+        for (int i = 0; i < buff.length; i++) {
+            System.out.print(buff[i] + " ");
+        }
+        System.out.println();
         //将解密后的明文转换为先前版本的字符串帧
         str = "h" + Hex.encode2(buff[0]) + Hex.encode2(buff[1]);
         for (int i = 2; i < 15; i++) {
@@ -195,7 +203,7 @@ public class ReceiveFrame extends CommandFrame {
             str += Hex.encode2(buff[i]);
         }
         str += "16";
-
+        System.out.println("解密后的字符串:" + str);
         //调用ParseFrom函数，解析帧
         return ParseFrom(str);
     }
@@ -222,6 +230,7 @@ public class ReceiveFrame extends CommandFrame {
                 reportCode = (byte) Integer.parseInt(dataStr.substring(60, 62), 16);
             } catch (Exception e) {
                 reportCode = 0;
+                e.printStackTrace();
             }
         }
         PDA.setPdaID(meterID);
