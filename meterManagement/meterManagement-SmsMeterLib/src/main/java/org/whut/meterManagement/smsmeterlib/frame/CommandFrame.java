@@ -259,7 +259,6 @@ public class CommandFrame {
         if (sKey.length() < 32) {
             for (int i = 1; i <= 32 - sKey.length(); i++)
                 str += "0";
-            //str = sKey.PadRight(32, '0');
         }
         str = str + str;
         byte[] key = new byte[32];
