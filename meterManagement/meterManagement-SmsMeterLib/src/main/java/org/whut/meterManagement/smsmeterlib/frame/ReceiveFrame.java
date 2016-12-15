@@ -116,7 +116,7 @@ public class ReceiveFrame extends CommandFrame {
         dataStr = SMS.substring(18, 18 + (dataLen - 14) * 2);
         //帧ID FrameID
         try {
-            int begin = 18 + getDataStr().length();
+            int begin = 18 + dataStr.length();
             frameID = (byte) Integer.parseInt(SMS.substring(begin, 2 + begin), 16);
         } catch (Exception e) {
             return false;
@@ -124,14 +124,14 @@ public class ReceiveFrame extends CommandFrame {
         //校验和
         int CS = 0;
         try {
-            int begin = 20 + getDataStr().length();
+            int begin = 20 + dataStr.length();
             CS = Integer.valueOf(SMS.substring(begin, 2 + begin), 16);
 
         } catch (Exception e) {
             return false;
         }
         //结束符 0x16
-        int begin = 22 + getDataStr().length();
+        int begin = 22 + dataStr.length();
         if (!SMS.substring(begin, 2 + begin).equals("16")) {
             return false;
         }
@@ -203,7 +203,7 @@ public class ReceiveFrame extends CommandFrame {
             str += Hex.encode2(buff[i]);
         }
         str += "16";
-        System.out.println("解密后的字符串:" + str);
+        System.out.println("解密后的字符串: " + str);
         //调用ParseFrom函数，解析帧
         return ParseFrom(str);
     }
