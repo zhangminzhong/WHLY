@@ -181,7 +181,11 @@ public class ReceiveFrame extends CommandFrame {
         //解密
         byte[] key = getKey(sKey);
         byte[] buff = AES.decrypt(frame, key);
-
+//        System.out.print("帧字节数组：");
+//        for (int i = 0; i < buff.length; i++) {
+//            System.out.print(buff[i] + " ");
+//        }
+//        System.out.println();
         //将解密后的明文转换为先前版本的字符串帧
         str = "h" + Hex.encode2(buff[0]) + Hex.encode2(buff[1]);
         for (int i = 2; i < 15; i++) {
