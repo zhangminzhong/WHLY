@@ -258,11 +258,10 @@ public class MeterStatus {
     }
 
     public void getFromStr(String dataStr) {
-<<<<<<< HEAD
-        System.out.println("数据区域字符串：" + dataStr + " 长度：" + dataStr.length());
-=======
+
+
         //System.out.println("数据区："+dataStr+"，长度："+dataStr.length());
->>>>>>> 34dece3cb598513400f5f39e9d6f1079dabc0af3
+
         remainMoney = 0.0;
         meterRead = 0;
         price = 0.00;

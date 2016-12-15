@@ -206,12 +206,8 @@ public class ReceiveFrame extends CommandFrame {
             str += Hex.encode2(buff[i]);
         }
         str += "16";
-<<<<<<< HEAD
-        System.out.println("解密后的字符串: " + str);
-=======
 
         //System.out.println("解密短信并处理后的字符串（字符串帧）："+SMS);
->>>>>>> 34dece3cb598513400f5f39e9d6f1079dabc0af3
         //调用ParseFrom函数，解析帧
         return ParseFrom(str);
     }
