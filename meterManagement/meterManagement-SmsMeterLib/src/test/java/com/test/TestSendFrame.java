@@ -7,6 +7,10 @@ import org.whut.meterManagement.smsmeterlib.frame.SendFrame;
  */
 public class TestSendFrame {
     public static void main(String[] args) {
+
+        System.out.println(getSendFrame());
+    }
+    public static String getSendFrame(){
         SendFrame sf = new SendFrame();
         sf.setMeterID("1049721501423");
         sf.setFuncCode((byte)0x23);
@@ -42,6 +46,6 @@ public class TestSendFrame {
             keyStr +=temp;
         }
         sf.ProcFrame(sb,keyStr);
-        System.out.println(sb.toString());
+        return sb.toString();
     }
 }
