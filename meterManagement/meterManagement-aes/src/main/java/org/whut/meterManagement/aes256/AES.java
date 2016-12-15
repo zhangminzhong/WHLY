@@ -83,8 +83,8 @@ public class AES {
         //        break;
         //    }
         //}
-        return allbuff;
-        /*int L = (int)allbuff[1] + 3;
+        //return allbuff;
+        int L = (int)allbuff[1] + 3;
         if (L > allbuff.length)
         {
             L = allbuff.length;
@@ -93,7 +93,6 @@ public class AES {
         for (int i = 0; i < rst.length; i++)
             rst[i] = allbuff[i];
         return rst;
-        */
     }
     static public byte[] decryptSame(byte[] buff,byte[] key) throws Exception {
         if (key.length != 32)

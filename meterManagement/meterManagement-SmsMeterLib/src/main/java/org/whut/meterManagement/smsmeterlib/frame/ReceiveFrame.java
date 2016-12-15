@@ -126,6 +126,7 @@ public class ReceiveFrame extends CommandFrame {
         try {
             int begin = 20 + getDataStr().length();
             CS = Integer.valueOf(SMS.substring(begin, 2 + begin), 16);
+            System.out.println("校验和："+CS);
         } catch (Exception e) {
             return false;
         }
@@ -136,7 +137,7 @@ public class ReceiveFrame extends CommandFrame {
         }
 
         //对命令码进行分解；命令码说明： D7：传送方向，1表示回传，0表示起始帧；；D6:执行结果，0表示正常；1表示异常; D5-D0:功能码
-        int itmp = funcCode / 0x40;
+        int itmp = Byte.toUnsignedInt(funcCode) / 0x40;
         if (itmp == 0) {
             frmDirection = FrameDirection.REQUEST;
             frmResult = FrameResult.SUCCESS;
@@ -147,7 +148,7 @@ public class ReceiveFrame extends CommandFrame {
             frmDirection = FrameDirection.REPLY;
             frmResult = FrameResult.FAIL;
         }
-        funcCode = (byte) (funcCode % 64);
+        funcCode = (byte) (Byte.toUnsignedInt(funcCode) % 64);
 
         ParseDataStr(); //对数据域进行解析
         return true;
@@ -160,14 +161,18 @@ public class ReceiveFrame extends CommandFrame {
      * @param sKey 表具密钥
      * @return
      */
-    public boolean ParseFrom(String SMS, String sKey) throws Exception {
+    public boolean ParseFrom(String SMS, String sKey) {
+        //System.out.println(SMS);
         //帧头判断
         if (!SMS.substring(0, 1).toUpperCase().equals("H")) {
             return false;
         }
-        //取得数据长度
+        //取得数据长度，L：加密字符串的长度，
+        // 加密字符串："h"+加密后的buff字节数组的length+加密后的buff（1变成个字节变成2个16进制字符）+"16"
+        //加密部分：从从命令码开始到校验码结束
         String str = SMS.substring(1, 3);
         int L = Integer.valueOf(str, 16);
+        //System.out.println(L);
         //判断截止字符串 16
         if (!SMS.substring(L * 2 + 3, L * 2 + 5).equals("16")) {
             return false;
@@ -180,7 +185,17 @@ public class ReceiveFrame extends CommandFrame {
         }
         //解密
         byte[] key = getKey(sKey);
-        byte[] buff = AES.decrypt(frame, key);
+        byte[] buff = new byte[0];
+        try {
+            buff = AES.decrypt(frame, key);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       /* System.out.print("解密后帧字节数组：");
+        for(int i=0;i<buff.length;i++){
+            System.out.print(buff[i]+" ");
+        }
+        System.out.println("字节长度："+buff.length);*/
 
         //将解密后的明文转换为先前版本的字符串帧
         str = "h" + Hex.encode2(buff[0]) + Hex.encode2(buff[1]);
@@ -192,6 +207,7 @@ public class ReceiveFrame extends CommandFrame {
         }
         str += "16";
 
+        //System.out.println("解密短信并处理后的字符串（字符串帧）："+SMS);
         //调用ParseFrom函数，解析帧
         return ParseFrom(str);
     }

@@ -125,6 +125,7 @@ public class SendFrame extends CommandFrame {
         tmpA[1] = (byte)(funcCode + (frmDirection.ordinal()) * 128 + (frmResult.ordinal()) * 64);
         //长度L
         tmpA[2] = 13;
+        //System.out.print(tmpA[2] + " ");
         //将表号加入到tmpA
         for (int i = 0; i < 13; i++)
         {
@@ -137,7 +138,9 @@ public class SendFrame extends CommandFrame {
         for (int i = 0; i < ParamList.size(); i++)
         {
             FrameParam fp = (FrameParam)ParamList.get(i);
+            //System.out.print(fp.getByteLen()+" ");
             tmpA[2] += (byte)fp.getByteLen();
+            //System.out.print(tmpA[2]+" ");
             switch (fp.PT)
             {
                 case INT: //整数，将int类型转成16进制字符串（长度是int类型*2），再转成4个字节的对应字节数组
@@ -258,6 +261,7 @@ public class SendFrame extends CommandFrame {
 
         //帧ID
         tmpA[2] += 1;
+        //System.out.println(tmpA[2]);
         tmpA[pz] = frameID;
         //System.out.println(frameID);
         //计算校验和
@@ -277,6 +281,7 @@ public class SendFrame extends CommandFrame {
         //buff = new byte[pz + 1];
         for (int i = 0; i <= pz; i++)
         {
+            //System.out.println(tmpA[2]);
             //buff[i] = tmpA[i];
             buff.add(tmpA[i]);
             //System.out.print(tmpA[i] + " ");
@@ -303,6 +308,7 @@ public class SendFrame extends CommandFrame {
         byte[] rst = new byte[buff.size() - 2];
         for (int i = 1; i < buff.size() - 1; i++)
             rst[i - 1] = buff.get(i);
+        //System.out.println();
         return rst;
     }
 
@@ -378,11 +384,11 @@ public class SendFrame extends CommandFrame {
         byte[] frame = ByteFrame();
         byte[] key = getKey(sKey);
 
-        /*System.out.print("帧字节数组：");
+       /* System.out.print("加密前帧字节数组：");
         for(int i=0;i<frame.length;i++){
             System.out.print(frame[i]+" ");
         }
-        System.out.println();
+        System.out.println("字节长度："+frame.length);
         System.out.print("密钥：");
         for(int i=0;i<key.length;i++){
             System.out.print(key[i]+" ");
@@ -396,6 +402,7 @@ public class SendFrame extends CommandFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         //生成字符串
         SMS.append("h");
         String buffLen = Integer.toHexString(buff.length);
@@ -403,15 +410,18 @@ public class SendFrame extends CommandFrame {
             buffLen = "0" + buffLen;
         buffLen.toUpperCase();
         SMS.append(buffLen);
+        //System.out.print("加密字符串：");
         for (int i = 0; i < buff.length; i++)
         {
             //SMS = SMS + buff[i].ToString("x2").ToUpper();
             String s = Integer.toHexString(Byte.toUnsignedInt(buff[i])).toUpperCase();
-            if(s.length()<2){
-                s = "0"+s;
+            if(s.length()<2) {
+                s = "0" + s;
             }
+            //System.out.print(s);
             SMS.append(s);
         }
+        //System.out.println();
         SMS.append("16");
         return true;
     }
