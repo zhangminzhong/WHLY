@@ -7,6 +7,7 @@ import org.whut.meterManagement.smsmeterlib.frame.ReceiveFrame;
  * Created by zhang_minzhong on 2016/12/14.
  */
 public class TestReceiveFrame {
+    //////
     public static void main(String[] args) {
         String sendFrame = TestSendFrame.getSendFrame();
         System.out.println("短信："+sendFrame);
