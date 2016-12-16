@@ -1,4 +1,6 @@
-package org.whut.meterManagement.smsmeterlib.frame;
+package org.whut.meterManagement.smsmeterlib.base;
+
+import org.whut.meterManagement.smsmeterlib.enums.ParamType;
 
 /**
  * Created by chenfu on 2016/12/9.

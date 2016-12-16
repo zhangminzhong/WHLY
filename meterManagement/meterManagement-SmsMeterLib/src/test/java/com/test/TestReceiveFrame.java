@@ -1,7 +1,7 @@
 package com.test;
 
-import org.whut.meterManagement.smsmeterlib.frame.MeterStatus;
-import org.whut.meterManagement.smsmeterlib.frame.ReceiveFrame;
+import org.whut.meterManagement.smsmeterlib.receive.MeterStatus;
+import org.whut.meterManagement.smsmeterlib.receive.ReceiveFrame;
 
 /**
  * Created by zhang_minzhong on 2016/12/14.

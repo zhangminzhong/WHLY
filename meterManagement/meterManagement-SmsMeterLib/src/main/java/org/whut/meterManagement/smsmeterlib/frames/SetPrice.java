@@ -1,4 +1,6 @@
-package org.whut.meterManagement.smsmeterlib.frame;
+package org.whut.meterManagement.smsmeterlib.frames;
+
+import org.whut.meterManagement.smsmeterlib.send.SendFrame;
 
 /**
  * Created by chenfu on 2016/12/13.

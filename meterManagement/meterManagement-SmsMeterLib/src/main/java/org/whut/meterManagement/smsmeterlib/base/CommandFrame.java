@@ -1,6 +1,10 @@
-package org.whut.meterManagement.smsmeterlib.frame;
+package org.whut.meterManagement.smsmeterlib.base;
+
+import org.whut.meterManagement.smsmeterlib.enums.FrameDirection;
+import org.whut.meterManagement.smsmeterlib.enums.FrameResult;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by chenfu on 2016/12/9.
@@ -70,14 +74,14 @@ public class CommandFrame {
         this.meterID = meterID;
     }
 
-    protected ArrayList ParamList;
+    protected List<FrameParam> ParamList;
 
     /**
      * 构造方法
      */
     public CommandFrame() {
         //构造方法
-        ParamList = new ArrayList();
+        ParamList = new ArrayList<FrameParam>();
         funcCode = 0;
         meterID = "";
         frameID = 0;

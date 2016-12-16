@@ -1,6 +1,10 @@
-package org.whut.meterManagement.smsmeterlib.frame;
+package org.whut.meterManagement.smsmeterlib.send;
 
 import org.whut.meterManagement.aes256.AES;
+import org.whut.meterManagement.smsmeterlib.base.CommandFrame;
+import org.whut.meterManagement.smsmeterlib.base.FrameParam;
+import org.whut.meterManagement.smsmeterlib.enums.FrameDirection;
+import org.whut.meterManagement.smsmeterlib.enums.FrameResult;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -137,7 +141,7 @@ public class SendFrame extends CommandFrame {
        // 处理参数对象
         for (int i = 0; i < ParamList.size(); i++)
         {
-            FrameParam fp = (FrameParam)ParamList.get(i);
+            FrameParam fp = ParamList.get(i);
             //System.out.print(fp.getByteLen()+" ");
             tmpA[2] += (byte)fp.getByteLen();
             //System.out.print(tmpA[2]+" ");
@@ -385,10 +389,10 @@ public class SendFrame extends CommandFrame {
         byte[] key = getKey(sKey);
 
        /* System.out.print("加密前帧字节数组：");
-        for(int i=0;i<frame.length;i++){
-            System.out.print(frame[i]+" ");
+        for(int i=0;i<frames.length;i++){
+            System.out.print(frames[i]+" ");
         }
-        System.out.println("字节长度："+frame.length);
+        System.out.println("字节长度："+frames.length);
         System.out.print("密钥：");
         for(int i=0;i<key.length;i++){
             System.out.print(key[i]+" ");

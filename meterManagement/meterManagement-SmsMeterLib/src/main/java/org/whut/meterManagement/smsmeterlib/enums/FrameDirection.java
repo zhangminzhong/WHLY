@@ -1,4 +1,4 @@
-package org.whut.meterManagement.smsmeterlib.frame;
+package org.whut.meterManagement.smsmeterlib.enums;
 
 /**
  * Created with IntelliJ IDEA.
