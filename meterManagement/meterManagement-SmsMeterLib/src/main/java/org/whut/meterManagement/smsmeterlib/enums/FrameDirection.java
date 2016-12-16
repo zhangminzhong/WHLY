@@ -11,5 +11,5 @@ package org.whut.meterManagement.smsmeterlib.enums;
 /// 帧方向，REQUEST起始帧，REPLY应答帧
 /// </summary>
 public enum FrameDirection {
-    REQUEST, REPLY
+    REQUEST,REPLY
 }

@@ -25,7 +25,7 @@ public class TestReceiveFrame {
         System.out.println("命令码："+rf.getFuncCode());
         System.out.println("表号："+rf.getMeterID());
         System.out.println("帧id："+rf.getFrameID());
-        System.out.println("数据区dataStr（表号之后，帧id之前的一段）："+rf.getDataStr());
+        System.out.println("表具状态字符串dataStr（表号之后，帧id之前的一段）："+rf.getDataStr());
         MeterStatus meterStatus = rf.MeterST;
         System.out.println("表号："+meterStatus.getMeterID());
     }

@@ -1,5 +1,6 @@
 package org.whut.meterManagement.smsmeterlib.receive;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,7 +31,7 @@ public class MeterStatus {
     private byte FMCW;
     private byte CGGZ;
 
-    private Date meterTime;
+    private Timestamp meterTime;
 
     private int amount1;
     private int amount2;
@@ -41,7 +42,7 @@ public class MeterStatus {
 
 
 
-    private Date createDate(String s){
+    private Timestamp createDate(String s){
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
@@ -50,7 +51,10 @@ public class MeterStatus {
             System.out.println("日起产生出错！");
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-        return date;
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        Timestamp timestamp = new Timestamp(c.getTimeInMillis());
+        return timestamp;
     }
 
     /// <summary>
@@ -209,11 +213,11 @@ public class MeterStatus {
         this.remainMoney = remainMoney;
     }
 
-    public Date getMeterTime() {
+    public Timestamp getMeterTime() {
         return meterTime;
     }
 
-    public void setMeterTime(Date meterTime) {
+    public void setMeterTime(Timestamp meterTime) {
         this.meterTime = meterTime;
     }
 
@@ -297,11 +301,8 @@ public class MeterStatus {
             presumamount += Integer.parseInt(dataStr.substring(20,22),16);
             //取得表具时间
             Long longTime = Long.parseLong(dataStr.substring(42,50),16);
-            Calendar c = Calendar.getInstance();
-            c.setTime(meterTime);
-            long millis = c.getTimeInMillis();
-            c.setTimeInMillis(millis+longTime);
-            meterTime = c.getTime();
+
+            meterTime.setTime(meterTime.getTime()+longTime);
         }
     }
 
