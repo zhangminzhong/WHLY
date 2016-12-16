@@ -1,7 +1,7 @@
 package org.whut.meterManagement.smsmeterlib.receive;
 
 import org.whut.meterManagement.aes256.AES;
-import org.whut.meterManagement.hex.Hex;
+import org.whut.meterManagement.util.Hex;
 import org.whut.meterManagement.smsmeterlib.base.CommandFrame;
 import org.whut.meterManagement.smsmeterlib.enums.FrameDirection;
 import org.whut.meterManagement.smsmeterlib.enums.FrameResult;
@@ -94,7 +94,7 @@ public class ReceiveFrame extends CommandFrame {
             return false;
         }
         //取得数据区域长度
-        int dataLen = 0;
+        int dataLen;
         //如果为统一回传帧，dataLen直接等于=0x3C
         if (funcCode == 0x3E) {
             dataLen = 0x3C;
@@ -125,7 +125,7 @@ public class ReceiveFrame extends CommandFrame {
             return false;
         }
         //校验和
-        int CS = 0;
+        int CS;
         try {
             int begin = 20 + dataStr.length();
             CS = Integer.valueOf(SMS.substring(begin, 2 + begin), 16);
