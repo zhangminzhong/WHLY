@@ -1,4 +1,4 @@
-package org.whut.meterManagement.hex;
+package org.whut.meterManagement.util;
 
 public class Hex {
 
