@@ -1,13 +1,8 @@
 package org.whut.meterManagement.smsmeterlib.receive;
 
-import org.whut.meterManagement.hex.DateUtil;
+import org.whut.meterManagement.date.DateUtil;
 
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.

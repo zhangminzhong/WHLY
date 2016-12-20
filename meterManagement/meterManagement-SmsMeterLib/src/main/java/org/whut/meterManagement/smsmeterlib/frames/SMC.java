@@ -1,6 +1,6 @@
 package org.whut.meterManagement.smsmeterlib.frames;
 
-import org.whut.meterManagement.hex.DateUtil;
+import org.whut.meterManagement.date.DateUtil;
 import org.whut.meterManagement.smsmeterlib.send.SendFrame;
 
 import java.sql.Timestamp;
@@ -53,8 +53,7 @@ public class SMC {
         sf.addParam(bKey);
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(beginDT.getTime());
-
-        System.out.println(c.get(Calendar.MONTH)+1);
+        //System.out.println(c.get(Calendar.MONTH)+1);
         sf.addParam(c.get(Calendar.YEAR)/100,1);
         sf.addParam(c.get(Calendar.YEAR)%100,1);
         sf.addParam(c.get(Calendar.MONTH)+1,1);

@@ -1,4 +1,4 @@
-package org.whut.meterManagement.hex;
+package org.whut.meterManagement.date;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
