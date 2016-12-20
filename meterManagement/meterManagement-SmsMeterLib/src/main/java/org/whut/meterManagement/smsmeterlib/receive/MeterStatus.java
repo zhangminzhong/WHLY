@@ -1,5 +1,7 @@
 package org.whut.meterManagement.smsmeterlib.receive;
 
+import org.whut.meterManagement.hex.DateUtil;
+
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -42,7 +44,7 @@ public class MeterStatus {
 
 
 
-    private Timestamp createDate(String s){
+   /* private Timestamp createDate(String s){
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
@@ -51,18 +53,17 @@ public class MeterStatus {
             System.out.println("日起产生出错！");
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        Timestamp timestamp = new Timestamp(c.getTimeInMillis());
+        Timestamp timestamp = new Timestamp(date.getTime());
         return timestamp;
-    }
+    }*/
 
     /// <summary>
     /// 构造方法
     /// </summary>
     public MeterStatus() {
         meterID = "";
-        meterTime = createDate("2000-01-01 00:00:00");
+        meterTime = DateUtil.createDate("2000-01-01 00:00:00");
+        //System.out.println(meterTime);
         //System.out.println(df.format(meterTime));
     }
 
@@ -72,7 +73,7 @@ public class MeterStatus {
     /// <param name="mid">表具编号</param>
     public MeterStatus(String meterID){
         this.meterID = meterID;
-        meterTime = createDate("2000-01-01 00:00:00");
+        meterTime = DateUtil.createDate("2000-01-01 00:00:00");
     }
 
     /// <summary>
