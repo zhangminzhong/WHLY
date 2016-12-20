@@ -1,6 +1,7 @@
 package org.whut.meterManagement.smsmeterlib.frames;
 
 import org.whut.meterManagement.date.DateUtil;
+import org.whut.meterManagement.smsmeterlib.enums.ValveCtrStyle;
 import org.whut.meterManagement.smsmeterlib.send.SendFrame;
 
 import java.sql.Timestamp;
@@ -36,7 +37,7 @@ public class SMC {
         //生成新密钥数组
         byte[] bKey = new byte[16];
         for(int i=0;i<16;i++){
-            bKey[i] = (byte) Integer.parseInt(nkey.substring(i*2,i*2+2),16);
+            bKey[i] = (byte) Integer.parseInt(nkey.substring(i * 2, i * 2 + 2),16);
         }
         SendFrame sf = new SendFrame();
         sf.setMeterID(meterId);
@@ -116,7 +117,7 @@ public class SMC {
         SendFrame sf = new SendFrame();
         sf.setMeterID(resid);
         sf.setTimeCorrection(timeCorrection);
-        sf.setFuncCode((byte)5);
+        sf.setFuncCode((byte)0x5);
         sf.setFrameID(fid);
         StringBuffer sb = new StringBuffer();
         sf.ProcFrame(sb,key);
@@ -187,4 +188,121 @@ public class SMC {
     /// <param name="style">透支方式。0：10元，1：3天，2：无限</param>
     /// <param name="tmCorrection">时间修正值</param>
     /// <returns></returns>
+    public static String getChangeOverdraftFrame(String resid,String key,byte fid,int style,int tmCorrection)
+    {
+        String strResult;
+
+        SendFrame sf = new SendFrame();
+        sf.setMeterID(resid);
+        sf.setFuncCode((byte) 0x33);
+        sf.setFrameID(fid);
+        sf.setTimeCorrection(tmCorrection);
+        sf.addParam(style, 1);
+        StringBuffer sb = new StringBuffer();
+        sf.ProcFrame(sb, key);
+        strResult = sb.toString();
+
+        return strResult;
+    }
+
+    /// <summary>
+    /// 变更服务号码
+    /// </summary>
+    /// <param name="resid">表具编号</param>
+    /// <param name="key">表具秘钥</param>
+    /// <param name="fid">帧ID</param>
+    /// <param name="serverno">服务号码</param>
+    /// <param name="tmCorrection">时间修正值</param>
+    /// <returns></returns>
+    public static String getChangeServerNoFrame(String resid,String key,byte fid,String serverno,int tmCorrection)
+    {
+        String strResult;
+
+        SendFrame sf = new SendFrame();
+        sf.setFuncCode((byte) 0x0D);
+        sf.setMeterID(resid);
+        sf.setFrameID(fid);
+        sf.setTimeCorrection(tmCorrection);
+        sf.addParam(1, 1);
+        sf.addParam(serverno);
+        StringBuffer sb = new StringBuffer();
+        sf.ProcFrame(sb, key);
+        strResult = sb.toString();
+
+        return strResult;
+    }
+
+    /// <summary>
+    /// 阀门控制
+    /// </summary>
+    /// <param name="resid">表具编号</param>
+    /// <param name="key">表具秘钥</param>
+    /// <param name="fid">帧ID</param>
+    /// <param name="vcs">阀门控制类别</param>
+    /// <param name="atDT">定时时间</param>
+    /// <param name="tmCorrection">时间修正值</param>
+    /// <returns>帧命令字符串</returns>
+    public static String getValveControlFrame(String resid,String key,byte fid,ValveCtrStyle vcs,Timestamp atDT,int tmCorrection)
+    {
+        String strResult;
+
+        SendFrame sf = new SendFrame();
+        sf.setMeterID(resid);
+        sf.setFrameID(fid);
+        switch (vcs)
+        {
+            case 允许开启:
+                sf.setFuncCode((byte) 0x01);
+                break;
+            case 临时关闭:
+                sf.setFuncCode((byte) 0x03);
+                break;
+            case 强制关闭:
+                sf.setFuncCode((byte) 0x0C);
+                break;
+            case 定时关闭:
+                sf.setFuncCode((byte) 0x20);
+                long millisecond = atDT.getTime() - DateUtil.createDate("2000-01-01 00:00:00").getTime();
+                millisecond = millisecond / 1000;
+                sf.addParam((int) millisecond, 4);
+                break;
+            default:
+                break;
+        }
+        sf.setTimeCorrection(tmCorrection);
+        StringBuffer sb = new StringBuffer();
+        sf.ProcFrame(sb, key);
+        strResult = sb.toString();
+
+        return strResult;
+    }
+
+    /**
+     * 强制对时
+     * @param resid   表具编号
+     * @param key     表具秘钥
+     * @param fid     帧ID
+     * @param secTS
+     * @param style
+     * @return  帧命令字符串
+     */
+    public static String getMandatoryTimeFrame(String resid,String key,byte fid,int secTS,byte style)
+    {
+        SendFrame sf = new SendFrame();
+        sf.setMeterID(resid);
+        sf.setFuncCode((byte) 0xFF);
+        sf.setFrameID(fid);
+        sf.addParam(Byte.toUnsignedInt(style), 1);
+        sf.addParam(Math.abs(secTS), 4);
+
+        StringBuffer rst = new StringBuffer();
+        sf.ProcFrame(rst, key);
+        return rst.toString();
+    }
+
+
+
+
+
+
 }

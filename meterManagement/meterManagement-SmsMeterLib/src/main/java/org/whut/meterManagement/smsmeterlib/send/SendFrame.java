@@ -27,6 +27,7 @@ public class SendFrame extends CommandFrame {
 
     public void setTimeCorrection(long timeCorrection) {
         this.timeCorrection = timeCorrection;
+        setV2();
     }
 
     public void setV2() {
@@ -388,12 +389,12 @@ public class SendFrame extends CommandFrame {
         byte[] frame = ByteFrame();
         byte[] key = getKey(sKey);
 
-       /* System.out.print("加密前帧字节数组：");
-        for(int i=0;i<frames.length;i++){
-            System.out.print(frames[i]+" ");
+       System.out.print("加密前帧字节数组：");
+        for(int i=0;i<frame.length;i++){
+            System.out.print(frame[i]+" ");
         }
-        System.out.println("字节长度："+frames.length);
-        System.out.print("密钥：");
+        System.out.println("字节长度："+frame.length);
+        /*System.out.print("密钥：");
         for(int i=0;i<key.length;i++){
             System.out.print(key[i]+" ");
         }

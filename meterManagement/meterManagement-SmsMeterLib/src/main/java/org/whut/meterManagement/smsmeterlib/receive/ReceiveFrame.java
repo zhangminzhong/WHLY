@@ -1,10 +1,10 @@
 package org.whut.meterManagement.smsmeterlib.receive;
 
 import org.whut.meterManagement.aes256.AES;
-import org.whut.meterManagement.util.Hex;
 import org.whut.meterManagement.smsmeterlib.base.CommandFrame;
 import org.whut.meterManagement.smsmeterlib.enums.FrameDirection;
 import org.whut.meterManagement.smsmeterlib.enums.FrameResult;
+import org.whut.meterManagement.util.Hex;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +117,8 @@ public class ReceiveFrame extends CommandFrame {
         meterID = SMS.substring(5, 18);
         //数据区域
         dataStr = SMS.substring(18, 18 + (dataLen - 14) * 2);
+        System.out.println("数据域字符串长度：" + (dataLen - 14) * 2);
+        System.out.println("数据域字符串：" + dataStr);
         //帧ID FrameID
         try {
             int begin = 18 + dataStr.length();
@@ -162,7 +164,7 @@ public class ReceiveFrame extends CommandFrame {
      *
      * @param SMS  短信内容
      * @param sKey 表具密钥
-     * @return
+     * @return  成功解析帧，返回true，失败返回false
      */
     public boolean ParseFrom(String SMS, String sKey) {
         //System.out.println(SMS);
