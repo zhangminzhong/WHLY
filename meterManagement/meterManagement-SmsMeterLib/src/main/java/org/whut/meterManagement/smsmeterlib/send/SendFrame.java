@@ -193,7 +193,7 @@ public class SendFrame extends CommandFrame {
                     for (int j = 0; j < fp.getByteLen(); j++)
                     {
                         //tmpA[pz] = Convert.ToByte(sva[j]);
-                        tmpA[pz] = (byte) sva.charAt(i);
+                        tmpA[pz] = (byte) sva.charAt(j);
                         //System.out.println(tmpA[pz]);
                         pz++;
                     }
