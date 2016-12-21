@@ -1,5 +1,6 @@
 package com.test;
 
+import org.whut.meterManagement.smsmeterlib.enums.ValveCtrStyle;
 import org.whut.meterManagement.smsmeterlib.frames.SMC;
 
 import java.sql.Timestamp;
@@ -43,8 +44,8 @@ public class TestSendFrame {
 //        }
 //        message = SMC.getChangePriceFrame("1049721501423", keyStr, (byte) 1, (double) 2, 2.5, (double) 3, 3.5, 200, 300, 400, timestamp, (byte) 30, atDT, 0);
         //message = SMC.getChangeOverdraftFrame("1049721501423", keyStr, (byte) 1, 0, 0);
-        message = SMC.getChangeServerNoFrame("1049721501423", keyStr, (byte) 1, "13237109543", 0);
-
+        //message = SMC.getChangeServerNoFrame("1049721501423", keyStr, (byte) 1, "13237109543", 0);
+        message = SMC.getValveControlFrame("1049721501423", keyStr, (byte) 1, ValveCtrStyle.定时关闭, timestamp, 0);
 
         return message;
     }
